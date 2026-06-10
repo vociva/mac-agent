@@ -105,6 +105,12 @@ defaults write com.apple.commerce AutoUpdate -bool false
 defaults write com.apple.Siri StatusMenuVisible -bool false
 defaults write com.apple.Siri UserHasDeclinedEnable -bool true
 
+echo "==> Disabling Core Audio"
+launchctl disable system/com.apple.audio.coreaudiod
+launchctl disable system/com.apple.audiomxd
+launchctl disable system/com.apple.audio.AudioComponentRegistrar
+launchctl disable system/com.apple.audio.systemsoundserverd
+
 echo ""
 echo "==> Done!"
 echo ""
