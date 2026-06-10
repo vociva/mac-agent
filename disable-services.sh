@@ -11,89 +11,114 @@
 # Run as: sudo bash macos-headless.sh
 
 echo "==> Disabling Spotlight..."
-launchctl disable system/com.apple.metadata.mds
-launchctl disable system/com.apple.metadata.mds.index
-launchctl disable system/com.apple.metadata.mds.scan
-launchctl disable system/com.apple.metadata.mds.spindump
-mdutil -a -i off
+launchctl disable system/com.apple.metadata.mds || true
+launchctl disable system/com.apple.metadata.mds.index || true
+launchctl disable system/com.apple.metadata.mds.scan || true
+launchctl disable system/com.apple.metadata.mds.spindump || true
+mdutil -a -i off || true
 
 echo "==> Disabling Bluetooth..."
-launchctl disable system/com.apple.bluetoothd
-launchctl disable system/com.apple.BTServer.le
-launchctl disable system/com.apple.BlueTool
+launchctl disable system/com.apple.bluetoothd || true
+launchctl disable system/com.apple.BTServer.le || true
+launchctl disable system/com.apple.BlueTool || true
 
 echo "==> Disabling Find My..."
-launchctl disable system/com.apple.findmymacd
-launchctl disable system/com.apple.icloud.findmydeviced
-launchctl disable system/com.apple.findmy.findmybeaconingd
+launchctl disable system/com.apple.findmymacd || true
+launchctl disable system/com.apple.icloud.findmydeviced || true
+launchctl disable system/com.apple.findmy.findmybeaconingd || true
 
 echo "==> Disabling iCloud..."
-launchctl disable system/com.apple.cloudd
-launchctl disable system/com.apple.icloud.searchpartyd
-launchctl disable system/com.apple.xartstorageremoted
+launchctl disable system/com.apple.cloudd || true
+launchctl disable system/com.apple.icloud.searchpartyd || true
+launchctl disable system/com.apple.xartstorageremoted || true
 
 echo "==> Disabling Analytics & Telemetry..."
-launchctl disable system/com.apple.analyticsd
-launchctl disable system/com.apple.ecosystemanalyticsd
-launchctl disable system/com.apple.osanalytics.osanalyticshelper
-launchctl disable system/com.apple.wifianalyticsd
-launchctl disable system/com.apple.audioanalyticsd
-launchctl disable system/com.apple.triald.system
-launchctl disable system/com.apple.rtcreportingd
-launchctl disable system/com.apple.SubmitDiagInfo
-launchctl disable system/com.apple.ReportCrash.Root
-launchctl disable system/com.apple.spindump
-launchctl disable system/com.apple.sysdiagnose
-launchctl disable system/com.apple.tailspind
+launchctl disable system/com.apple.analyticsd || true
+launchctl disable system/com.apple.ecosystemanalyticsd || true
+launchctl disable system/com.apple.osanalytics.osanalyticshelper || true
+launchctl disable system/com.apple.wifianalyticsd || true
+launchctl disable system/com.apple.audioanalyticsd || true
+launchctl disable system/com.apple.triald.system || true
+launchctl disable system/com.apple.rtcreportingd || true
+launchctl disable system/com.apple.SubmitDiagInfo || true
+launchctl disable system/com.apple.ReportCrash.Root || true
+launchctl disable system/com.apple.spindump || true
+launchctl disable system/com.apple.sysdiagnose || true
+launchctl disable system/com.apple.tailspind || true
+launchctl disable system/com.apple.symptomsd-diag || true
+launchctl disable system/com.apple.eligibilityd || true
 
 echo "==> Disabling Location Services..."
-launchctl disable system/com.apple.locationd
+launchctl disable system/com.apple.locationd || true
 
 echo "==> Disabling Time Machine..."
-launchctl disable system/com.apple.backupd
-launchctl disable system/com.apple.backupd-helper
+launchctl disable system/com.apple.backupd || true
+launchctl disable system/com.apple.backupd-helper || true
 
 echo "==> Disabling AirPlay & Continuity..."
-launchctl disable system/com.apple.AirPlayXPCHelper
-launchctl disable system/com.apple.rapportd
-launchctl disable system/com.apple.nearbyd
-launchctl disable system/com.apple.sharingd
+launchctl disable system/com.apple.AirPlayXPCHelper || true
+launchctl disable system/com.apple.rapportd || true
+launchctl disable system/com.apple.nearbyd || true
+launchctl disable system/com.apple.sharingd || true
+launchctl disable system/com.apple.wifip2pd || true
 
 echo "==> Disabling Game Center..."
-launchctl disable system/com.apple.GameController.gamecontrollerd
-launchctl disable system/com.apple.gamepolicyd
+launchctl disable system/com.apple.GameController.gamecontrollerd || true
+launchctl disable system/com.apple.gamepolicyd || true
 
 echo "==> Disabling Music..."
-launchctl disable system/com.apple.musicd
+launchctl disable system/com.apple.musicd || true
 
 echo "==> Disabling NFC..."
-launchctl disable system/com.apple.nfcd
+launchctl disable system/com.apple.nfcd || true
 
 echo "==> Disabling NFS & SMB..."
-launchctl disable system/com.apple.nfsd
-launchctl disable system/com.apple.nfsconf
-launchctl disable system/com.apple.netbiosd
-launchctl disable system/com.apple.smb.preferences
-launchctl disable system/com.apple.NetworkSharing
+launchctl disable system/com.apple.nfsd || true
+launchctl disable system/com.apple.nfsconf || true
+launchctl disable system/com.apple.netbiosd || true
+launchctl disable system/com.apple.smb.preferences || true
+launchctl disable system/com.apple.NetworkSharing || true
 
 echo "==> Disabling Family Controls / Screen Time..."
-launchctl disable system/com.apple.familycontrols
+launchctl disable system/com.apple.familycontrols || true
 
 echo "==> Disabling App Store daemon..."
-launchctl disable system/com.apple.appstored
+launchctl disable system/com.apple.appstored || true
 
 echo "==> Disabling Contacts sync..."
-launchctl disable system/com.apple.contactsd
+launchctl disable system/com.apple.contactsd || true
 
 echo "==> Disabling Postfix (mail)..."
-launchctl disable system/com.apple.postfix.master
-launchctl disable system/com.apple.postfix.newaliases
+launchctl disable system/com.apple.postfix.master || true
+launchctl disable system/com.apple.postfix.newaliases || true
 
 echo "==> Disabling Beta Enrollment..."
-launchctl disable system/com.apple.betaenrollmentd
+launchctl disable system/com.apple.betaenrollmentd || true
 
-echo "==> Disabling attention awareness (camera)..."
-launchctl disable system/com.apple.attentionawarenessd
+echo "==> Disabling Audio..."
+launchctl disable system/com.apple.audio.coreaudiod || true
+launchctl disable system/com.apple.audiomxd || true
+launchctl disable system/com.apple.audio.AudioComponentRegistrar || true
+launchctl disable system/com.apple.audio.systemsoundserverd || true
+
+echo "==> Disabling Camera & Media IO..."
+launchctl disable system/com.apple.cmio.registerassistantservice || true
+launchctl disable system/com.apple.attentionawarenessd || true
+
+echo "==> Disabling Accessories..."
+launchctl disable system/com.apple.accessoryupdaterd || true
+launchctl disable system/com.apple.mediaremoted || true
+
+echo "==> Disabling Siri Intelligence..."
+launchctl disable system/com.apple.coreduetd || true
+launchctl disable system/com.apple.contextstored || true
+launchctl disable system/com.apple.biomed || true
+
+echo "==> Disabling Push Notifications..."
+launchctl disable system/com.apple.apsd || true
+
+echo "==> Disabling Captive Portal..."
+launchctl disable system/com.apple.captiveagent || true
 
 echo "==> Setting privacy/telemetry defaults..."
 defaults write com.apple.SubmitDiagInfo AutoSubmit -bool false
@@ -104,12 +129,6 @@ defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -bool false
 defaults write com.apple.commerce AutoUpdate -bool false
 defaults write com.apple.Siri StatusMenuVisible -bool false
 defaults write com.apple.Siri UserHasDeclinedEnable -bool true
-
-echo "==> Disabling Core Audio"
-launchctl disable system/com.apple.audio.coreaudiod
-launchctl disable system/com.apple.audiomxd
-launchctl disable system/com.apple.audio.AudioComponentRegistrar
-launchctl disable system/com.apple.audio.systemsoundserverd
 
 echo ""
 echo "==> Done!"
