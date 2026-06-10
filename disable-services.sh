@@ -120,6 +120,22 @@ launchctl disable system/com.apple.apsd || true
 echo "==> Disabling Captive Portal..."
 launchctl disable system/com.apple.captiveagent || true
 
+echo "==> Disabling Software Update..."
+launchctl disable system/com.apple.softwareupdated || true
+launchctl disable system/com.apple.mobileassetd || true
+
+echo "==> Disabling Accessibility..."
+launchctl disable system/com.apple.universalaccessd || true
+
+echo "==> Disabling Performance Metrics..."
+launchctl disable system/com.apple.PerfPowerServices || true
+
+echo "==> Disabling Duet Activity Scheduler..."
+launchctl disable system/com.apple.dasd || true
+
+echo "==> Disabling Mobile Activation..."
+launchctl disable system/com.apple.mobileactivationd || true
+
 echo "==> Setting privacy/telemetry defaults..."
 defaults write com.apple.SubmitDiagInfo AutoSubmit -bool false
 defaults write com.apple.CrashReporter DialogType none
