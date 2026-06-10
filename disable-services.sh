@@ -10,8 +10,6 @@
 #
 # Run as: sudo bash macos-headless.sh
 
-set -e
-
 echo "==> Disabling Spotlight..."
 launchctl disable system/com.apple.metadata.mds
 launchctl disable system/com.apple.metadata.mds.index
